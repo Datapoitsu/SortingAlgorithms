@@ -1,6 +1,11 @@
 ## -------------------- Sorting base -------------------- ##
 #Written By: Aarni Junkkala
+
+#Base tools for my sorting algorithms, as there are many elements that repeat.
+
 import random
+import time
+import os
 
 def Generate(size): #Generates a list of wanted size
     L = []
@@ -17,10 +22,20 @@ def Shuffle(L):
         L[i] = holder
     return(L)
 
-def Check(L): #Checks if list is in order
+def Check(L): #Checks if list is in order, proper algoritms, shouldn't need  this
     for i in range(0,len(L) - 1):
         if L[i] > L[i + 1]:
             return False
     return True
 
-print(Generate(10))
+def Visualize(L):
+    os.system("cls")
+    #time.sleep(1)
+    for i in range(len(L)):
+        s = ""
+        for k in range(L[i]):
+            s += "█"
+        print(s + " " + str(L[i]))
+        
+if __name__ == "__main__":
+    print(Generate(10))
