@@ -1,20 +1,22 @@
 ## -------------------- Bubble sort -------------------- ##
 #Written By: Aarni Junkkala
 import SortingBase as SB
-import random
+
+#Bubblesort in the best way that I was able to do it.
+#If two elements weren't changed in the end, then they are in the correct place
 
 def BubbleSort(L):
-    num = 0 #Index number
-    top = len(L) - 1 #once this is reached, then start from bottom
-    while top != 0:        
-        if L[num] > L[num +1]: #If left values is greater, then swap them
-            L[num],L[num+1] = L[num+1],L[num]
-        
-        #Increases index value and limits it to be always one less than last index
-        num += 1
-        if num >= top:
-            num = 0
-            top -= 1
+    Counter = len(L) - 1
+    while Counter > -1: #Loops the list from end to start
+        NotSwapped = 0
+        for j in range(Counter): #Another loop from start to last loop
+            if L[j] > L[j+1]:
+                L[j],L[j+1] = L[j+1],L[j]
+                NotSwapped = 0
+            else:
+                NotSwapped += 1
+        Counter -= 1 + NotSwapped
+    return L
 
 if __name__ == '__main__':
     Array = SB.Generate(5)
