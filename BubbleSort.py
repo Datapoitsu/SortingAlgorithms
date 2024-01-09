@@ -1,6 +1,5 @@
 ## -------------------- Bubble sort -------------------- ##
 #Written By: Aarni Junkkala
-import SortingBase as SB
 
 #Bubblesort in the best way that I was able to do it.
 #If two elements weren't changed in the end, then they are in the correct place
@@ -19,6 +18,7 @@ def BubbleSort(L):
     return L
 
 if __name__ == '__main__':
+    import SortingBase as SB
     Array = SB.Generate(5)
     print("Start: " + str(Array))
     Array = BubbleSort(Array)

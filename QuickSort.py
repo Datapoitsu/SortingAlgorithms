@@ -1,8 +1,6 @@
 ## -------------------- Quicksort -------------------- ##
 #Written By: Aarni Junkkala
 
-import SortingBase as SB
-
 def Quicksort(L):
 
     if len(L) <= 1: #too short to sorted
@@ -29,6 +27,7 @@ def Quicksort(L):
     return smaller + [pivot] + greater
 
 if __name__ == "__main__":
+    import SortingBase as SB
     Array = SB.Generate(10)
     print("Start: " + str(Array))
     Array = Quicksort(Array)

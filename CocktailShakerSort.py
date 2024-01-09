@@ -1,8 +1,6 @@
 ## -------------------- Cocktail shaker sort -------------------- ##
 #Written By: Aarni Junkkala
 
-import SortingBase as SB
-
 def CocktailShakerSort(L):
     num = 0
     top = len(L) - 1
@@ -32,6 +30,7 @@ def CocktailShakerSort(L):
     return L
 
 if __name__ == '__main__':
+    import SortingBase as SB
     Array = SB.Generate(10)
     print("Start: " + str(Array))
     Array = CocktailShakerSort(Array)
