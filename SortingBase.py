@@ -4,8 +4,6 @@
 #Base tools for my sorting algorithms, as there are many elements that repeat.
 
 import random
-import time
-import os
 
 def Generate(size): #Generates a list of wanted size
     L = []
@@ -29,8 +27,6 @@ def Check(L): #Checks if list is in order, proper algoritms, shouldn't need  thi
     return True
 
 def Visualize(L):
-    os.system("cls")
-    #time.sleep(1)
     for i in range(len(L)):
         s = ""
         for k in range(L[i]):

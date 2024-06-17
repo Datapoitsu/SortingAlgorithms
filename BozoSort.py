@@ -1,10 +1,10 @@
-## -------------------- Bogo sort -------------------- ##
+## -------------------- Bozo sort -------------------- ##
 #Written By: Aarni Junkkala
 
 import SortingBase as SB
 import random
 
-def BogoSort(L):
+def BozoSort(L):
     while SB.Check(L) == False:
         num1 = random.randint(0,len(L) - 1)
         num2 = random.randint(0,len(L) - 1)
@@ -14,5 +14,5 @@ def BogoSort(L):
 if __name__ == '__main__':
     Array = SB.Generate(10)
     print("Start: " + str(Array))
-    Array = BogoSort(Array)
+    Array = BozoSort(Array)
     print("End: " + str(Array))
