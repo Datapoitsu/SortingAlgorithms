@@ -1,6 +1,5 @@
 ## -------------------- Bozo sort -------------------- ##
 #Written By: Aarni Junkkala
-
 import SortingBase as SB
 import random
 

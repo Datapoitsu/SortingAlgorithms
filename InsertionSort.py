@@ -1,17 +1,13 @@
 ## -------------------- InsertionSort -------------------- ##
 #Written by: Aarni Junkkala
-
-def InsertionSort(L):
-    for i in range(1,len(L)): #Proses is repeated to all but first
-        holdIndex = i
-        while holdIndex > 0: #Swaps smaller cards to left and greater to right.
-            if L[holdIndex] < L[holdIndex - 1]:
-                L[holdIndex],L[holdIndex - 1] = L[holdIndex - 1],L[holdIndex]
-                holdIndex -= 1
+def InsertionSort(list):
+    for i in range(1,len(list)): #Proses is repeated to all but first
+        for k in range(i,0,-1):
+            if list[k] < list[k-1]:
+                list[k],list[k-1] = list[k-1],list[k]
             else:
                 break
-    return L
-
+    return list
 
 if __name__ == '__main__':
     import SortingBase as SB

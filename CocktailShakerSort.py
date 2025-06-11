@@ -1,33 +1,18 @@
 ## -------------------- Cocktail shaker sort -------------------- ##
 #Written By: Aarni Junkkala
-
-def CocktailShakerSort(L):
-    num = 0
-    top = len(L) - 1
-    bot = 0
-    direction = 1
-    while bot != top:
-        if direction == 1: #Top
-            if L[num] > L[num +1]: #If left values is greater, then swap them
-                L[num],L[num+1] = L[num+1],L[num]
-        if direction == -1: #Bottom
-            if L[num] < L[num - 1]: #If left value is greater, then swap them
-                L[num],L[num - 1] = L[num - 1],L[num]
-        
-        #Num is changed towards direction
-        num += direction
-        
-        #Limiters
-        if direction == 1 and num >= top:
-            top -= 1
-            direction = -1
-            num -= 1
-        elif direction == -1 and num <= bot:
-            bot += 1
-            direction = 1
-            num += 1
-        
-    return L
+def CocktailShakerSort(list, pointers = None, direction = 1):
+    if pointers == None: #Building pointers.
+        pointers = [0,len(list) - 1]
+    if pointers[0] == pointers[1]: #Returning when whole thing is done.
+        return list
+    index = pointers[0] if direction == 1 else pointers[1] #Setting index based on the direction.
+    while index != pointers[(direction + 1) // 2]:
+        if (direction == 1 and list[index] > list[index + direction]) or (direction == -1 and list[index + direction] > list[index]):
+            list[index],list[index + direction] = list[index + direction],list[index]
+        index += direction
+    
+    pointers[(direction + 1) // 2] -= direction #Changes the pointer to be closer to the center.
+    return CocktailShakerSort(list,pointers, direction * -1)
 
 if __name__ == '__main__':
     import SortingBase as SB

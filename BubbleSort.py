@@ -4,22 +4,17 @@
 #Bubblesort in the best way that I was able to do it.
 #If two elements weren't changed in the end, then they are in the correct place
 
-def BubbleSort(L):
-    Counter = len(L) - 1
-    while Counter > -1: #Loops the list from end to start
-        NotSwapped = 0
-        for j in range(Counter): #Another loop from start to last loop
-            if L[j] > L[j+1]:
-                L[j],L[j+1] = L[j+1],L[j]
-                NotSwapped = 0
-            else:
-                NotSwapped += 1
-        Counter -= 1 + NotSwapped
-    return L
+def BubbleSort(list):
+    Counter = len(list) - 1
+    for k in range(len(list) - 1): #Loops the list from end to start
+        for i in range(len(list) - 1 - k):
+            if list[i] > list[i+1]:
+                list[i],list[i+1] = list[i+1],list[i]
+    return list
 
 if __name__ == '__main__':
     import SortingBase as SB
-    Array = SB.Generate(5)
+    Array = SB.Generate(10)
     print("Start: " + str(Array))
     Array = BubbleSort(Array)
     print("End: " + str(Array))

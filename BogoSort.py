@@ -1,9 +1,7 @@
 ## -------------------- Bogo sort -------------------- ##
 #Written By: Aarni Junkkala
-
 import SortingBase as SB
 import random
-
 def BogoSort(L):
     while SB.Check(L) == False:
         for i in range(len(L)):

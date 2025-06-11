@@ -3,10 +3,10 @@
 def Quicksort(list):
     if len(list) <= 1:
         return list
-    pivot = list[0]
+    pivot = list[-1]
     smaller, greater = [],[]
 
-    for i in range(1, len(list)):
+    for i in range(len(list) - 1):
         if list[i] < pivot:
             smaller.append(list[i])
         else:
